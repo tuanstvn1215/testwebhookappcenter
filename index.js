@@ -4,7 +4,11 @@ var bodyParser = require('body-parser')
 const port = process.env.port || 3000
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.post('/', (req, res) => {
+app.post('/a', (req, res) => {
+  console.log(req)
+  res.send(req.body)
+})
+app.get('/a', (req, res) => {
   console.log(req)
   res.send(req.body)
 })
